@@ -40,13 +40,13 @@ int main() {
 			result = quotient(num1, num2); // 예외 발생시 result에는 쓰레기값이 들어가 있음. 근데 result 안 쓰니까 문제는 안 됨.
 			cout << "결과: " << result << endl;
 		}
-		catch(int x){
+		catch(const char* x){ // throw랑 자료형 맞추기
 			cout << "0으로 나눌 수 없습니다." << endl;
 		}
 	}
 	return 0;
 }
 int quotient(int _num1, int _num2) {
-	if (_num2 == 0) throw 0; // 예외 발생시 catch로 바로 이동
+	if (_num2 == 0) throw "divide by zero"; // 예외 발생시 catch로 바로 이동
 	return _num1 / _num2;
 }
