@@ -41,12 +41,18 @@ int main() {
 			cout << "결과: " << result << endl;
 		}
 		catch(const char* x){ // throw랑 자료형 맞추기
-			cout << "0으로 나눌 수 없습니다." << endl;
+			cout << "0으로 나눌 수 없습니다. string" << endl;
+			cout << x << endl; // throw 출력
+		}
+		catch (int x) {
+			cout << "0으로 나눌 수 없습니다. int" << endl;
 		}
 	}
 	return 0;
 }
 int quotient(int _num1, int _num2) {
-	if (_num2 == 0) throw "divide by zero"; // 예외 발생시 catch로 바로 이동
+	if (_num2 == 0) 
+		// throw 90;
+		throw "divide by zero"; // 예외 발생시 catch로 바로 이동
 	return _num1 / _num2;
 }
