@@ -24,35 +24,35 @@
 //}
 
 // 4번째 방법 변경
-#include <iostream>
-using namespace std;
-
-int quotient(int, int);
-
-int main() {
-	int num1, num2, result;
-	for (int i = 0; i < 5; i++) {
-		cout << "num1 입력: ";
-		cin >> num1;
-		cout << "num2 입력: ";
-		cin >> num2;
-		try {
-			result = quotient(num1, num2); // 예외 발생시 result에는 쓰레기값이 들어가 있음. 근데 result 안 쓰니까 문제는 안 됨.
-			cout << "결과: " << result << endl;
-		}
-		catch(const char* x){ // throw랑 자료형 맞추기
-			cout << "0으로 나눌 수 없습니다. string" << endl;
-			cout << x << endl; // throw 출력
-		}
-		catch (int x) {
-			cout << "0으로 나눌 수 없습니다. int" << endl;
-		}
-	}
-	return 0;
-}
-int quotient(int _num1, int _num2) {
-	if (_num2 == 0) 
-		// throw 90;
-		throw "divide by zero"; // 예외 발생시 catch로 바로 이동
-	return _num1 / _num2;
-}
+//#include <iostream>
+//using namespace std;
+//
+//int quotient(int, int);
+//
+//int main() {
+//	int num1, num2, result;
+//	for (int i = 0; i < 5; i++) {
+//		cout << "num1 입력: ";
+//		cin >> num1;
+//		cout << "num2 입력: ";
+//		cin >> num2;
+//		try {
+//			result = quotient(num1, num2); // 예외 발생시 result에는 쓰레기값이 들어가 있음. 근데 result 안 쓰니까 문제는 안 됨.
+//			cout << "결과: " << result << endl;
+//		}
+//		catch(const char* x){ // throw랑 자료형 맞추기 // 문자열 리터럴(문자열의 번지 주소가 옴)은 기본적으로 char 상수 포인터로 받음 // string은 기본 타입이 아님
+//			cout << "0으로 나눌 수 없습니다. string" << endl;
+//			cout << x << endl; // throw 출력
+//		}
+//		catch (int x) {
+//			cout << "0으로 나눌 수 없습니다. int" << endl;
+//		}
+//	}
+//	return 0;
+//}
+//int quotient(int _num1, int _num2) {
+//	if (_num2 == 0) 
+//		// throw 90;
+//		throw "divide by zero"; // 예외 발생시 catch로 바로 이동
+//	return _num1 / _num2;
+//}
